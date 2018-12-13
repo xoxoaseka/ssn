@@ -30,8 +30,16 @@ makeNet2 <- function(edgelist_df) {
 	                  				end=(network.edgecount(nyunet)-1), interval=2, 
 	                                 aggregate.dur=2, rule='any'))
 	
-	render.d3movie(nyunet.dyn, usearrows = T, displaylabels = T, label= nyunet %v% "vertex.names",
+	render.d3movie(nyunet.dyn, usearrows = T, displaylabels = F, label= nyunet %v% "vertex.names",
 	               bg="white", 
+		       label = nyunet %v% "vertex.names",
+	               label.col = "yellow",
+	               bg = "#38A1F3", 
+	               vertex.border = "white", 
+	               vertex.col =  "white",
+	               edge.col = "white",  
+	               vertex.sides = 5,
+	               vertex.rot = TRUE,
 	               #vertex.border="#ffffff", 
 	               # vertex.col =  net %v% "col",
 	               vertex.cex = function(slice){log(degree(slice)+1)},  
